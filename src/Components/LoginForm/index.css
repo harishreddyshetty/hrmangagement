@@ -1,0 +1,47 @@
+
+
+.background{
+    background-image: url('../../../public/office.jpg');
+    height: 100vh;
+    background-size: cover;
+
+    
+}
+.hr-button{
+margin-top: 5px;
+height: 36px;
+width: 136px;
+background-color:cadetblue;
+border: none;
+border-radius: 5px;
+font-size: 22px;
+color: aliceblue;
+font-family: roboto;
+font-weight: 600;
+}
+.hr-button:hover{
+    background-color: darkgray;
+
+}
+@media (max-width:576px){
+    .hr-button{
+        margin-top: 5px;
+        width: 90px;
+    }
+    
+}
+.form{
+    padding: 50px;
+}
+input::placeholder{
+    font-size: 12px;
+}
+.box-shadow {
+    box-shadow: 0 22px 18px rgba(0, 0, 0, 2);
+  }
+.login-card{
+    background-color: aliceblue;
+    border-radius: 5px;
+
+}
+  
