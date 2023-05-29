@@ -49,9 +49,9 @@ const LoginForm = () => {
         }),
       };
 
-      const response = await fetch('http://localhost:8000/login', options);
+      const response = await fetch('http://192.168.0.158:8000/validating_credentials', options);
       if (response.status === 200) {
-        navigate('/AllEmployees');
+        navigate('/allemployees');
       }
       else{
         setErr(true)

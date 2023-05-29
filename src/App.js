@@ -4,6 +4,7 @@ import LoginForm from './Components/LoginForm';
 
 
 import './App.css';
+import AllEmployees from "./Components/AllEmployees";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         
         
         <Route exact path="/" Component={LoginForm} />
+        <Route exact path="/AllEmployees" Component={AllEmployees} />
+
 
 
       </Routes>

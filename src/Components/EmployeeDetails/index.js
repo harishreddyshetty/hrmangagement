@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Loader from 'react-loader-spinner';
+import {TailSpin} from 'react-loader-spinner';
 
 const EmployeeDetails = () => {
   const [employeeData, setEmployeeData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +25,7 @@ const EmployeeDetails = () => {
       <h1>Employee Details</h1>
       {loading ? (
         <div className="text-center">
-          <Loader type="Puff" color="#00BFFF" height={100} width={100} />
+          <TailSpin type="Puff" color="#00BFFF" height={100} width={100} />
           <p>Loading employee data...</p>
         </div>
       ) : (
