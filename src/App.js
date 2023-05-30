@@ -11,10 +11,10 @@ function App() {
     <Router>
       <Routes>
 
-        
-        
+
+
         <Route exact path="/" Component={LoginForm} />
-        <Route exact path="/AllEmployees" Component={AllEmployees} />
+        <Route exact path="/allemployees" Component={AllEmployees} />
 
 
 

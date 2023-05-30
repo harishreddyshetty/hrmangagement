@@ -7,7 +7,9 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  const [err,setErr]=useState(false)
+  const [errMsg,setErrMsg]=useState(false)
+  const [errMsgDisplay,setErrMsgDisplay]=useState('')
+  
   const navigate = useNavigate();
 
   const handleEmailBlur = () => {
@@ -49,14 +51,21 @@ const LoginForm = () => {
         }),
       };
 
-      const response = await fetch('http://192.168.0.158:8000/validating_credentials', options);
+      const response = await fetch('http://192.168.0.158:8000/validating_credentials  ', options);
       if (response.status === 200) {
         navigate('/allemployees');
+        
+
       }
       else{
-        setErr(true)
-      }
+        setErrMsg(true)
+        const data=await response.json()
+        setErrMsgDisplay(data.detail)
+        
+    
+     
     }
+  }
   };
 
   return (
@@ -90,8 +99,10 @@ const LoginForm = () => {
           />
           {passwordError && <p className="invalid-feedback">{passwordError}</p>}
         </div>
+        {errMsg&&<p className='err-msg-display'>*{errMsgDisplay}</p>}
         <button type="submit" className="hr-button m-1 align-self-center">Login</button>
-        {err?<p className='invalid-feedback'>"password and username is not matched"</p>:null}
+        
+    
       </form>
     </div>
   );

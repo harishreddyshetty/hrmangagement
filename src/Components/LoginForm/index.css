@@ -1,4 +1,7 @@
-
+.err-msg-display{
+    color: red;
+    font-size: 14px;
+}
 
 .background{
     background-image: url('../../../public/office.jpg');
@@ -18,10 +21,6 @@ font-size: 22px;
 color: aliceblue;
 font-family: roboto;
 font-weight: 600;
-}
-.hr-button:hover{
-    background-color: darkgray;
-
 }
 @media (max-width:576px){
     .hr-button{

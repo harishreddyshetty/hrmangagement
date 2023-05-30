@@ -1,13 +1,9 @@
 
 h1{
     text-align: center;
-    color:lightslategray;
+    color:#003480;
     font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    
-  
-
-    
+    font-weight: 700;   
 }
 .tailspin{
   height: 100vh;
@@ -15,12 +11,14 @@ h1{
 }
 .table-container {
     margin-top: 20px;
+    
   }
-  
   table {
     width: 100%;
     border-collapse: collapse;
   }
+  
+
   
   th, td {
     padding: 8px;
@@ -38,7 +36,7 @@ h1{
   }
     
   tr:nth-child(even) {
-    background-color:lightblue;
+    background-color:lightskyblue;
     overflow: auto;
   }
   

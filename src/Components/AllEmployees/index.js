@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { TailSpin } from 'react-loader-spinner';
+import {Vortex} from 'react-loader-spinner';
 import IndividualEmployee from '../IndividualEmployee';
 import './index.css'
 
@@ -39,19 +39,28 @@ const AllEmployees = () => {
       setIsLoading(false);
     } catch (error) {
       console.log('Error fetching employees:', error);
-      setIsLoading(false);
+      setIsLoading(true);
     }
   };
 
   return (
-    <div className='d-flex flex-column  align-items-center'>
+    <div className='d-flex flex-column  align-items-center mt-2 '>
       <h1 className='heading'>All Employees of Openskale</h1>
       {isLoading ? (
         <div className=' tailspin d-flex flex-column justify-content-center'>
-          <TailSpin type="Oval" color="#00BFFF" height={60} width={60} />
+          <Vortex
+  visible={true}
+  height="80"
+  width="80"
+  ariaLabel="vortex-loading"
+  wrapperStyle={{}}
+  wrapperClass="vortex-wrapper"
+  colors={['#003480','#97D7F7','#003E84','#97D7F7','#003480','#00ADEE']}
+/>
 
         </div>) : (
-        <table className='table-container'>
+        <table>
+          <thead>
           <tr>
             <th>EMPLOYEENAME</th>
             <th>EMAIL</th>
@@ -64,14 +73,17 @@ const AllEmployees = () => {
             <th>DEPARTMENT</th>
             
           </tr>
+          </thead>
+          <tbody>
           {
+            
             employees.map((employee => (
 
               <IndividualEmployee data={employee} key={employee.empId}/>
 
             )))
           }
-
+</tbody>
         </table>
       )}
     </div>

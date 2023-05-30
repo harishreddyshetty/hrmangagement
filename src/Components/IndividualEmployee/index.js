@@ -8,6 +8,7 @@ const IndividualEmployee = (props) => {
 
 
   return (
+    
     <tr>
       <td>{firstName} {lastName}</td>
       <td>{email}</td>
@@ -20,6 +21,7 @@ const IndividualEmployee = (props) => {
       <td>{department}</td>
 
     </tr>
+  
   );
 };
 
